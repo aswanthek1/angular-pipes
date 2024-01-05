@@ -2,11 +2,12 @@ import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { Student } from '../Models/Students';
 import { StudentService } from '../services/student.service';
 import { CommonModule } from '@angular/common';
+import { PercentagePipe } from '../pipes/percentage.pipes';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PercentagePipe],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
