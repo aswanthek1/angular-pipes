@@ -3,11 +3,13 @@ import { Student } from '../Models/Students';
 import { StudentService } from '../services/student.service';
 import { CommonModule } from '@angular/common';
 import { PercentagePipe } from '../pipes/percentage.pipes';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, PercentagePipe],
+  imports: [CommonModule, PercentagePipe, FormsModule, FilterPipe],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
@@ -20,6 +22,8 @@ export class AdminComponent {
 
   students!: Student[];
   totalMarks!: number;
+
+  filterText:string = 'All';
   
   //PROPERTIES FOR INSERTING
   @ViewChild('name') Name!: ElementRef;
